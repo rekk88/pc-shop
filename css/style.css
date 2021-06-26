@@ -8,6 +8,16 @@
     visibility: hidden;
     width: 300px;
 }
+.buy_now{
+    background-color: black;
+    color: white;
+    padding: 7px 15px;
+    /* border: none; */
+    border: black;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
 /* body */
 body{
     font-family: 'Source Sans Pro', sans-serif;
@@ -61,9 +71,24 @@ main .item_box{
     border: 1px solid black;
     /* width: calc((100% / 4) - 20px); */
     width: 300px;
+    padding: 5px;
+    position: relative;
 }
 main .item_box > img{
     width: 100%;
+}
+main .item_box > .price_wrapper{
+  background-color: red;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.3rem;
+  padding: 5px;
+  border-radius: 5px;
+} 
+
+main .item_box .item_text{
+    margin-bottom: 8px;
 }
 /* footer */
 
