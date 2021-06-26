@@ -16,6 +16,16 @@ header > h1{
     padding: 4rem 0;
     text-transform: uppercase;
 }
+header > .cart_container{
+    position: fixed;
+    top: 20px;
+    right: 20px
+}
+header > .cart_container .cart{
+    background-color: red;
+    height: 100px;
+    width: 200px;
+}
 
 /* main */
 
