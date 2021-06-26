@@ -94,4 +94,6 @@ main .item_box .item_text{
 
 footer{
     padding: 1.5rem 0;
+    width: 90%;
+    margin: 0 auto;
 }
