@@ -2,7 +2,7 @@ import Product from "./Product.js";
 // nome , descrizione , prezzo , categoria , img_path)
 const prodotto = new Product("nome","sono un nome", 25 , "categoria ? " , "img/img1.png");
 
-console.log(prodotto);
+// console.log(prodotto);
 
 
 const products = [
@@ -22,14 +22,14 @@ products.forEach((element) => {
     <!-- item start -->
     <div class="item_box">
         <div class="img_box">
-            <img src="/${img_path}" alt="case">
+            <img src="/${img_path}" alt="${nome}">
         </div>
-        <h3>Nome prodotto</h3>
-        <p class="item_text">Lorem ipsum dolor sit amet.</p>
-        <div class="price_wrapper"><span class="price">29</span><span>€</span></div>
+        <h3>${nome}</h3>
+        <p class="item_text">${descrizione}</p>
+        <div class="price_wrapper"><span class="price">${prezzo}</span><span>€</span></div>
         
         <!-- <hr> -->
-        <button class="buy_now">Buy Now</button>
+        <button class="buy_now" data-name="${nome}" data-price=${prezzo}>Buy Now</button>
     </div>
     <!-- item end -->
     
@@ -39,7 +39,34 @@ products.forEach((element) => {
 document.getElementById("output").innerHTML += `
 <!-- offset per gli elementi dell'ultima riga  -->
 <div class="item_box item_empty"></div>
+<div class="item_box item_empty"></div>
 <!-- <div class="item_box item_empty"></div> -->
 
-
 `
+let k = document.querySelectorAll(".buy_now") //crea un array di bottoni
+// console.log(k);
+
+let totale = 0;
+let totaleFixed;
+//seleziono tutti i button con classe ".buy_now"
+document.querySelectorAll(".buy_now").forEach(function(element){
+    // aggiungo un event listener per ogni button 
+    element.addEventListener("click", function(){
+        console.log(totale);
+        // alert("ciao");
+        console.log(this);  //this restituice element 
+        const prezzo = element.getAttribute("data-price");
+        const nome = element.getAttribute("data-name");
+        document.getElementById("shop_list").innerHTML += `
+            <li>${nome} ${prezzo} € </li>
+        `
+        console.log(prezzo);
+        totale += parseFloat(prezzo);
+        totaleFixed = totale.toFixed(2); //conversione a due decimali
+        console.log(totale);
+        document.getElementById("totale").innerHTML ="Tot : €" +  totaleFixed;
+    });
+    
+    
+    
+});

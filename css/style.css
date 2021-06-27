@@ -42,8 +42,8 @@ header > .cart_container{
 }
 header > .cart_container .cart{
     background-color: rgba(201, 201, 201, 0.486);
-    height: 100px;
-    width: 200px;
+    min-height: 100px;
+    min-width: 200px;
     padding: 10px;
     font-size: 1.3em;
     border-radius: 10px;
@@ -51,6 +51,11 @@ header > .cart_container .cart{
 }
 header > .cart_container .cart > div{ 
     border-bottom: 2px solid black;
+}
+header > .cart_container .cart ul#shop_list{ /*lista oggetti nel carrello*/
+    list-style: none;
+    overflow-y: auto;
+    max-height: 300px;
 }
 
 /* main */
@@ -85,6 +90,7 @@ main .item_box .img_box > img{
 }
 main .item_box > .price_wrapper{
   background-color: red;
+  color: white;
   position: absolute;
   top: 5px;
   right: 5px;
