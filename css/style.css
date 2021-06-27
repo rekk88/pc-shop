@@ -74,8 +74,14 @@ main .item_box{
     padding: 5px;
     position: relative;
 }
-main .item_box > img{
+main .item_box .img_box{
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+main .item_box .img_box > img{
     width: 100%;
+
 }
 main .item_box > .price_wrapper{
   background-color: red;
